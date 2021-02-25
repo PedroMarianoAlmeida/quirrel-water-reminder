@@ -15,7 +15,8 @@ export default function Home() {
           evt.preventDefault();
           const formData = new FormData(evt.target);
           const email = formData.get("email");
-          alert(email);
+          - alert(email);
+          + fetch("/api/setupReminder", { method: "POST", body: email });
         }}
       >
         <input
